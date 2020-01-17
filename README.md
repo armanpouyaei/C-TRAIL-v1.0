@@ -6,9 +6,9 @@ If you are planning to run the C-TRAIL model, you need to use CMAQ's tutorials.
 CMAQ combines current knowledge in atmospheric science and air quality modeling with multi-processor
 computing techniques in an open-source framework to deliver fast, technically sound estimates of ozone,
 particulates, toxics, and acid deposition.
-## CMAQ Repository Guide
+## C-TRAIL Repository Guide
 Source code and scripts are organized as follows:
-* **CCTM (CMAQ Chemical Transport Model):** code and scripts for running the 3D-CTM at the heart of CMAQ; also includes technical release notes for the release version of CMAQ.
+* **CCTM:** code and scripts for running the 3D-CTM at the heart of C-TRAIL.
 * **DOCS:** CMAQ User's Guide, developers guidance, tutorials and known issues.
 * **PREP:** Data preprocessing tools for important input files like initial and boundary conditions, etc.
 * **POST:** Data postprocessing tools for aggregating and evaluating CMAQ output products (e.g. Combine, Site-Compare, etc)
