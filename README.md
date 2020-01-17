@@ -1,4 +1,4 @@
-C-TRAILv1.0 is based on CMAQv5.2 (you can find all the changes in the /CCTM/scripts/ and /CCTM/src/ folders)
+C-TRAILv1.0 is based on CMAQv5.2 (you can find all the changes in the /CCTM/scripts/ and /CCTM/src/)
 ========
 If you are planning to run the C-TRAIL model, you need to use CMAQ's tutorials.
 ========
