@@ -3,7 +3,7 @@ C-TRAILv1.0 is based on CMAQv5.2 (you can find all the changes in the /CCTM/scri
 If you are planning to run the C-TRAIL model, you need to use CMAQ's tutorials.
 ========
 
-CMAQ combines current knowledge in atmospheric science and air quality modeling with multi-processor
+C-TRAIL/CMAQ combines current knowledge in atmospheric science and air quality modeling with multi-processor
 computing techniques in an open-source framework to deliver fast, technically sound estimates of ozone,
 particulates, toxics, and acid deposition.
 ## C-TRAIL Repository Guide
