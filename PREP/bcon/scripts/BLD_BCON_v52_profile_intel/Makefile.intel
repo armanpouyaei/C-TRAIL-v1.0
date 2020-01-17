@@ -1,0 +1,114 @@
+#   Makefile generated for serial execution using program bldmake
+#
+#   Generation date [03/19/2019  11:33:01]
+#   Configuration file [BCON_v52_profile.cfg.bld]
+#   Using GIT repository [/tng7/users/jjung/CMAQ_5.2/CMAQ-5.2/PREP/bcon/src]
+#   With mechanism [cb05tucl_ae6_aq/]
+#   Full Compiler Paths when Makefile was Built:
+#       FC = /opt/intel/compilers_and_libraries_2018.1.163/linux/mpi/intel64/bin/mpiifort
+#       CC = /usr/bin/cc
+#   Library Paths:
+#      $(LIB)/ioapi/modules -> /tng7/users/jjung/CMAQ_5.2/IOAPI/ioapi/fixed_src
+#      $(LIB)/ioapi/include_files -> /tng7/users/jjung/CMAQ_5.2/IOAPI/Linux2_x86_64ifort
+#      $(LIB)/ioapi/lib -> /tng7/users/jjung/CMAQ_5.2/IOAPI/Linux2_x86_64ifort
+#      $(LIB)/mpi -> /opt/intel/impi/2018.1.163/lib64
+#      $(LIB)/netcdf -> /opt/netCDF/lib
+
+ EXEC = BCON_v52_profile.exe
+
+ FC = mpiifort
+ CC = cc
+
+ LIB = /tng7/users/jjung/CMAQ_5.2/CMAQ-5.2/lib/x86_64/intel
+ include_path = -I $(LIB)/ioapi/modules \
+                -I $(LIB)/ioapi/include_files
+
+ WARN = 
+ FSTD = -O3 -fno-alias -mp1 -fp-model source
+ DBG  = -O0 -g -check bounds -check uninit -fpe0 -fno-alias -ftrapuv -traceback
+
+ f_FLAGS   = -fixed -132 $(FSTD) $(include_path)
+ f90_FLAGS = -free $(FSTD) $(include_path)
+#f_FLAGS   = -fixed -132 $(DBG) $(include_path)
+#f90_FLAGS = -free $(DBG) $(include_path)
+
+ F_FLAGS   = $(f_FLAGS)
+ F90_FLAGS = $(f90_FLAGS)
+ C_FLAGS   = -I.
+
+ LINKER     = $(FC)
+ LINK_FLAGS = 
+
+ REPOROOT = /tng7/users/jjung/CMAQ_5.2/CMAQ-5.2/PREP/bcon/src
+
+ CPP = $(FC)
+ CPP_FLAGS = 
+
+ IOAPI  = -L$(LIB)/ioapi/lib -lioapi
+ NETCDF = -L$(LIB)/netcdf/lib -lnetcdff -lnetcdf -L/opt/HDF5/lib -lhdf5 -lhdf5_hl -lcurl -L/usr/lib64 -lcurl
+ LIBRARIES = $(IOAPI) $(NETCDF)
+
+
+GLOBAL_MODULES = \
+  BC_PARMS.o \
+  UTILIO_DEFN.o \
+  HGRD_DEFN.o \
+  CGRID_SPCS.o \
+  VGRD_DEFN.o
+
+COMMON = \
+  bcon.o \
+  findex.o \
+  gc_spc_map.o \
+  get_envlist.o \
+  lat_lon.o \
+  lr_interp.o \
+  lst_spc_map.o \
+  ngc_spc_map.o \
+  opn_bc_file.o
+
+PROFILE = \
+  prof_bcout.o \
+  prof_driver.o \
+  prof_vinterp.o
+
+OBJS = \
+  $(GLOBAL_MODULES) \
+  $(COMMON) \
+  $(PROFILE)
+
+.SUFFIXES: .F .f .c .F90 .f90
+
+$(EXEC): $(OBJS)
+	$(LINKER) $(LINK_FLAGS) $(OBJS) $(LIBRARIES) -o $@
+
+.F.o:
+	$(FC) -c $(F_FLAGS) $(CPP_FLAGS) $(INCLUDES) $<
+
+.f.o:
+	$(FC) -c $(F_FLAGS) $<
+
+.F90.o:
+	$(FC) -c $(F90_FLAGS) $(CPP_FLAGS) $(INCLUDES) $<
+
+.f90.o:
+	$(FC) -c $(F90_FLAGS) $<
+
+.c.o:
+	$(CC) -c $(C_FLAGS) $<
+
+clean:
+	rm -f $(OBJS) *.mod
+
+
+# dependencies
+
+bcon.o:	HGRD_DEFN.o VGRD_DEFN.o CGRID_SPCS.o BC_PARMS.o
+CGRID_SPCS.o:	UTILIO_DEFN.o
+gc_spc_map.o:	CGRID_SPCS.o
+lst_spc_map.o:	CGRID_SPCS.o BC_PARMS.o
+ngc_spc_map.o:	CGRID_SPCS.o BC_PARMS.o
+opn_bc_file.o:	HGRD_DEFN.o VGRD_DEFN.o CGRID_SPCS.o BC_PARMS.o
+prof_bcout.o:	HGRD_DEFN.o VGRD_DEFN.o CGRID_SPCS.o BC_PARMS.o
+prof_driver.o:	CGRID_SPCS.o BC_PARMS.o
+prof_vinterp.o:	HGRD_DEFN.o VGRD_DEFN.o BC_PARMS.o
