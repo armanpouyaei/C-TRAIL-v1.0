@@ -82,7 +82,7 @@ set ParOpt                             #> uncomment to build a multiple processo
                                        #>     (see $CMAQ_MODEL/CCTM/src/couple)
 # set ModHadv   = hadv/yamo             #> horizontal advection module
  set ModHadv   = hadv/tg
- set ModVadv   = vadv/wrf              #> vertical advection module (see $CMAQ_MODEL/CCTM/src/vadv)
+ set ModVadv   = vadv/yamo              #> vertical advection module (see $CMAQ_MODEL/CCTM/src/vadv)
 # set ModHdiff  = hdiff/multiscale      #> horizontal diffusion module
  set ModHdiff  = hdiff/tg
 # set ModVdiff  = vdiff/acm2            #> vertical diffusion module (see $CMAQ_MODEL/CCTM/src/vdiff)
@@ -96,7 +96,7 @@ set ParOpt                             #> uncomment to build a multiple processo
  set ModPlmrs  = plrise/smoke          #> in-line emissions plume rise
  set ModCgrds  = spcs/cgrid_spcs_nml   #> chemistry species configuration module 
                                        #>     (see $CMAQ_MODEL/CCTM/src/spcs)
- set ModPhot   = phot/inline           #> photolysis calculation module 
+ set ModPhot   = phot/table           #> photolysis calculation module 
                                        #>     (see $CMAQ_MODEL/CCTM/src/phot)
  set Mechanism = cb05tucl_ae6_aq        #> chemical mechanism (see $CMAQ_MODEL/CCTM/src/MECHS)
 # set ModGas    = gas/smvgear  #> gas-phase chemistry solver (see $CMAQ_MODEL/CCTM/src/gas)
