@@ -25,3 +25,7 @@ Release notes and Code documentation are included within this repository (they a
 ## CMAQ Test Cases
 Benchmark/tutorial input and output data for each CMAQ release version are available from the CMAS Center Software Clearinghouse. From http://www.cmascenter.org, select Download -> Software -> CMAQ and choose the version to get the tutorial data.  
 
+## FOR MORE INFORMATION PLEASE REFER TO THE FOLLOWING:
+Pouyaei, A., Choi, Y., Jung, J., Sadeghi, B., & Song, C. H. (2020). Concentration Trajectory Route of Air pollution with an Integrated Lagrangian model (C-TRAIL Model v1. 0) derived from the Community Multiscale Air Quality Model (CMAQ Model v5. 2). Geoscientific Model Development, 13(8), 3489-3505.
+URL: https://gmd.copernicus.org/articles/13/3489/2020/gmd-13-3489-2020.html
+
